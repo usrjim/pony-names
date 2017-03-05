@@ -8,10 +8,12 @@ names = File.readlines("pony_names.txt")
           .to_set
           .to_a
 
+max = names.length
+
 puts "looping names, any key to see next, [q] to quite."
 while input = gets.chomp do
   break if input == 'q'
-  puts names.shuffle.take(2).join(" ")
+  puts "#{names[rand(max)]} #{names[rand(max)]}"
 end
 
 
